@@ -1,19 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyGrades.Models
 {
     public class Student
     {
         public int Id { get; set; }
-        [Required]
+        [DisplayName("Nome")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
         public string Name { get; set; }
-        [Required]
+        [DisplayName("Email")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
         public EmailAddressAttribute EmailAddress { get; set; }
-        [Required]
+        [DisplayName("Data de Nascimento")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
-        [Required]
+        [DisplayName("Senha")]
+        [Required(ErrorMessage = "Campo Obrigatório")]
         public string Password { get; set; }
 
     }
